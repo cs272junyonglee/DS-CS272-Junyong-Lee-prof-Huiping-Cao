@@ -1,0 +1,6 @@
+//Junyong Lee
+// Lab1 eclipse_test Answer
+
+1567031890147
+Summation for number 20 is: 210
+Summation for number 10 is: 1023
