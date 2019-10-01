@@ -1,42 +1,75 @@
-// Junyong Lee
-// 800623507     // 1.5
 
+
+/**
+ * @author Junyong Lee
+ * This program is lab4 linked list.
+ */
 public class IntNode {
-    // 1.1
+
+    
+    // 1.1 instance variables
     private int data;
     private IntNode link;
+    /**
+     * Constructor for initializing data and link
+     */
 
-    // 1.2
+    // 1.2 Constructor
     public IntNode() {
+        
         data = 0;
         link = null;
     }
 
-    // 1.3
+    /**
+     * Initialize data and link with parameters         
+     * */
+    
+     // 1.3 Constructor with parameters
     public IntNode(int _data, IntNode _node) {
+
         data = _data;
         link = _node;
+    
+
     }
 
     // 1.4 Get & Set
+    /**
+     * This method is to get data
+     * @return return the data
+     */
     public int getData() {
         return data;
     }
-
+    /**
+     * This method is to initialize data with given value
+     * @param d is initialize the data
+     */
     public void setData(int d) {
         data = d;
     }
-
+    /**
+     * This method is to get link
+     * @return return the link
+     */
     public IntNode getLink() {
         return link;
     }
-
+    /**
+     * This method is to initialize link with given value
+     * @param l is initialize the link
+     */
     public void setLink(IntNode l) {
         link = l;
     }
 
-    // 1.5
+    /**
+    /* This method moves cursor and accumulate the data and arrow until the cursor is not null
+    */
+    // 1.5 toString returns current node->node-> ... -> last node
     public String toString() {
+
         String result = "";
         IntNode cursor = null;
         // Activated by head
@@ -51,19 +84,31 @@ public class IntNode {
         }
 
         return result;
+
     }
 
-    // 1.6
+    /**
+     * makes new node and make it point to what current link was pointing to.
+    */
+    // 1.6 
     public void addNodeAfterThis(int newdata) {
         link = new IntNode(newdata, link);
+ 
     }
 
-    // 1.7
+    /**
+    * pointing to node after node that I am pointing at now.
+    */
+    // 1.7 
     public void removeNodeAfterThis() {
         link = link.link;
+
     }
 
-    // 1.8
+    /**
+    * Travers linked list and count 'answer'         
+    */
+    // 1.8 
     public static int listLength(IntNode head) {
 
         int answer;
@@ -74,9 +119,13 @@ public class IntNode {
         }
 
         return answer;
+
     }
 
-    // 1.9
+            /**
+         * Traverse linked list until it finds the target data. Parameter 'head' should not be null
+         */
+    // 1.9 
     public static boolean search(IntNode head, int data) {
 
         if(head == null){
@@ -90,8 +139,12 @@ public class IntNode {
         }
         return false;
 
-    }
 
+    }
+    /**
+     * This main method is to test through all methods
+     * @param args
+     */
     public static void main(String[] args) {
 
         IntNode head = new IntNode(42, null); // head -> (42,null)
